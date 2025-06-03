@@ -1,4 +1,5 @@
 name: prune-branches
+version:: '2.0.0'
 run-name: ${{ github.actor }} executed prune-branches action
 on:
     schedule:
@@ -7,6 +8,7 @@ on:
 jobs:
     prune-branches:
         runs-on: ubuntu-latest
+        environment: MR4GH # Mediumroast for GitHub environment
         permissions:
           contents: write 
         steps:

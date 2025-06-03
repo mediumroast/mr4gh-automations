@@ -1,4 +1,5 @@
 name: basic-reporting
+version:: '2.0.0'
 run-name: ${{ github.actor }} executed basic-reporting action
 on: 
     schedule:
@@ -7,6 +8,7 @@ on:
 jobs:
     basic-reporting:
         runs-on: ubuntu-latest
+        environment: MR4GH # Mediumroast for GitHub environment
         permissions:
           actions: read
           contents: write

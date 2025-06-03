@@ -42,6 +42,7 @@ async function run(maxBranches) {
     }
   }
 
-//   Set a variable maxBranches to 15
-const maxBranches = 15
+// Get maxBranches from environment variable or default to 15
+const maxBranches = process.env.MAX_BRANCHES ? parseInt(process.env.MAX_BRANCHES, 10) : 15;
+console.log(`Using maxBranches: ${maxBranches} ${process.env.MAX_BRANCHES ? '(from environment variable)' : '(default value)'}`);
 run(maxBranches)
