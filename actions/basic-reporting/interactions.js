@@ -30,8 +30,18 @@ async function createInteractionsList (company, interactions) {
         // Find the interaction object that matches the interaction name
         const interaction = interactions.find((interaction) => interaction.name === interactionName)
         
-        // Skip interaction if any section is "Unknown"
-        if (interaction.description === "Unknown" || interaction.abstract === "Unknown" || interaction.reading_time === "Unknown" || interaction.tags === "Unknown") {
+        // Skip interaction if any section is "Unknown" or null
+        if (
+            !interaction.description || 
+            !interaction.abstract || 
+            !interaction.reading_time || 
+            !interaction.tags || 
+            !interaction.name ||
+            interaction.description === "Unknown" || 
+            interaction.abstract === "Unknown" || 
+            interaction.reading_time === "Unknown" || 
+            interaction.tags === "Unknown"
+        ) {
             return null
         }
 
