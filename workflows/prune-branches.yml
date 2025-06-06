@@ -1,6 +1,7 @@
 name: prune-branches
-version:: '2.0.0'
 run-name: ${{ github.actor }} executed prune-branches action
+env:
+    WORKFLOW_VERSION: '2.0.2'  # Version defined as environment variable
 on:
     schedule:
         - cron: '0 0 * * *' # Runs at midnight every day
