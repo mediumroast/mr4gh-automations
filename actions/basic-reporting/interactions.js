@@ -30,6 +30,12 @@ async function createInteractionsList (company, interactions) {
         // Find the interaction object that matches the interaction name
         const interaction = interactions.find((interaction) => interaction.name === interactionName)
         
+        // Skip if interaction is not found
+        if (!interaction) {
+            console.log(`Warning: Interaction "${interactionName}" referenced in company "${company.name}" was not found.`);
+            return null;
+        }
+        
         // Skip interaction if any section is "Unknown" or null
         if (
             !interaction.description || 
@@ -42,7 +48,7 @@ async function createInteractionsList (company, interactions) {
             interaction.reading_time === "Unknown" || 
             interaction.tags === "Unknown"
         ) {
-            return null
+            return null;
         }
 
         // Create link internal link to the interaction file    
