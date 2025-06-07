@@ -1,7 +1,7 @@
 name: basic-reporting
 run-name: ${{ github.actor }} executed basic-reporting action
 env:
-  WORKFLOW_VERSION: '2.0.2'  # Version defined as environment variable
+  WORKFLOW_VERSION: '2.0.3'  # Version defined as environment variable
 on: 
     schedule:
         - cron: '0 0 * * *' # Runs at midnight every day
